@@ -60,7 +60,7 @@ const setMovieDirectors = catchError(async(req,res)=>{
     const movie = await Movie.findByPk(id);
     if(!movie) return res.status(404).json({message: "Movie not found"});
     await movie.setDirectors(req.body);
-    const director = await movie.getDirectors();
+    const  director  = await movie.getDirectors();
     return res.json(director);
 })
 
